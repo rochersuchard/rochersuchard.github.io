@@ -6,20 +6,26 @@
             {
                 "titre": "Facters favorisants d'hypertension artérielle",
                 "mnemo": "<b>G<\/b>ros <b>FANS<\/b> de <b>SODAS<\/b>",
-                "liste": ["<b>G<\/b>énétique","<b>F<\/b>emme","<b>Â<\/b>ge","<b>N<\/b>oir","<b>S<\/b>édentarité","<b>S<\/b>el","<b>O<\/b>bésité","couche sociale <b>D<\/b>éfavorisée","<b>A<\/b>lcool","<b>S<\/b>tress"]
+                "liste": ["<b>G</b>énétique","<b>F<\/b>emme","<b>Â<\/b>ge","<b>N<\/b>oir","<b>S<\/b>édentarité","<b>S<\/b>el","<b>O<\/b>bésité","couche sociale <b>D</b>éfavorisée","<b>A<\/b>lcool","<b>S<\/b>tress"]
             },
 
             {
                 "titre": "Etiologies de sus-décalage ST à l'ECG",
                 "mnemo": "<b>P</b>aris a des <b>MST</b>",
                 "liste": ["<b>P</b>éricardite","<b>A</b>névrisme du ventricule gauche","<b>R</b>epolarisation précoce","<b>I</b>nfarctus du myocarde","<b>S</b>pasme coronarien","<b>M</b>yocardite aiguë","<b>B</b>rugada","<b>T</b>akotsubo"]
+            },
+
+            {
+                "titre": "Etiologies médicamenteuses d'hyperlipidémie secondaire",
+                "mnemo": "<b>DC</b> (décès) par consommation de pâtes <b>CARBO</b>",
+                "liste": ["<b>D</b>iurétiques","<b>C</b>orticoïdes","<b>C</b>iclosporine","<b>A</b>ntirétroviraux","<b>R</b>étinoïdes","<b>B</b>eta-bloquants","<b>O</b>estrogènes"]
             }
         ]
     },
 
     {
         "nom": "Dermatologie",
-        "emoji":"🖐",
+        "emoji":"🤲",
         "contenu": [
             {
                 "titre": "Critères de purpura vasculaire",
@@ -37,6 +43,12 @@
                 "titre": "Facteurs de risque de colite microscopique",
                 "mnemo": "<b>VAL</b>e<b>TS</b>",
                 "liste": ["<b>V</b>einotoniques", "<b>A</b>INS", "<b>L</b>ansoprazole", "<b>T</b>iclopidine", "<b>S</b>ertraline"]
+            },
+            
+            {
+                "titre": "Cancer du spectre Lynch",
+                "mnemo": "Avec <b>VICE</b>, elle <b>GOBE</b> son <b>P</b>lan <b>C</b>ul",
+                "liste": ["Spectre étroit : <b>V</b>oies urinaires, <b>I</b>ntestin grêle, <b>C</b>olorectal, <b>E</b>ndomètre", "Spectre large : <b>G</b>lioblastome, <b>O</b>vaire, Voies <b>B</b>iliaires, <b>E</b>stomac, <b>P</b>ancréas, <b>C</b>utané"]
             }
         ]
     },
@@ -55,6 +67,12 @@
                 "titre": "Médicaments allongeant le QT",
                 "mnemo": "<b>F</b>ou <b>MANIAQ</b>",
                 "liste": ["<b>F</b>luoroquinolone", "<b>M</b>acrolides + kétolides", "<b>A</b>ntihistaminiques de première génération", "<b>N</b>euroleptiques", "<b>I</b>SRS", "<b>A</b>ntiarythmiques", "<b>Q</b>uinine"]
+            },
+
+            {
+                "titre": "Types d'arboviroses",
+                "mnemo": "<b>DEF</b>O<b>NCEZ</b>",
+                "liste": ["<b>D</b>engue", "<b>E</b>ncéphalite à tiques", "<b>F</b>ièvre jaune", "West <b>N</b>ile", "<b>C</b>hinkungunya", "<b>E</b>ncéphalite japonaise", "<b>Z</b>ika"]
             }
         ]
     },
@@ -72,6 +90,24 @@
     },
 
     {
+        "nom": "Néphrologie",
+        "emoji": "🧂",
+        "contenu": [
+            {
+                "titre": "Composition des calculs",
+                "mnemo": "<b>CUSCO</b>",
+                "liste": ["<b>C</b>alcique (80%) : oxalate de calcium (70%) et phosphate de calcium (10%)", "<b>U</b>rique (10%)", "<b>S</b>truvite (2%)", "<b>C</b>ystine (2%)", "<b>O</b>tre : médicamenteux, xanthinique"]
+            },
+        
+            {
+                "titre": "Etiologies de glomérulonéphrite extra-membraneuse secondaire",
+                "mnemo": "<b>GEM</b> les <b>CLITOS</b>",
+                "liste": ["<b>C</b>ancer", "<b>L</b>upus", "<b>I</b>nfection : VHB/VHC, lèpre, syphilis, paludisme, filariose", "<b>T</b>oxique : AINS", "<b>O</b>to-immun", "<b>S</b>arcoïdose"]
+            }
+        ]
+    },
+    
+    {
         "nom": "Neurologie",
         "emoji": "🧠",
         "contenu": [
@@ -80,6 +116,43 @@
                 "mnemo": "<b>HEMAATT</b>ome",
                 "liste": ["<b>H</b>TA", "<b>E</b>ndocardite infectieuse", "<b>M</b>AV", "<b>A</b>thérosclérose", "<b>A</b>ngiopathie amyloïde", "<b>A</b>VC ischémique", "<b>T</b>raumatisme crânien", "<b>T</b>raitement anticoagulant"]
 
+            }
+        ]
+    },
+
+    {
+        "nom": "Oncologie",
+        "emoji": "",
+        "contenu": [
+
+            {
+                "titre": "Cancers favorisés par l'alcool",
+                "mnemo": "<b>FORCES</b>",
+                "liste": ["<b>F</b>oie", "<b>OR</b>L", "<b>C</b>olorectal</b>", "O<b>E</b>sophage, <b>E</b>stomac", "<b>S</b>ein"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Ophtalmo",
+        "emoji": "👓",
+        "contenu": [
+            {
+                "titre": "Fond d'oeil d'OACR",
+                "mnemo": "<b>OACR</b>",
+                "liste": ["<b>O</b>edème ischémique rétinien", "<b>A</b>rtères grêles et filiformes", "<b>M</b>acula rouge cerise", "<b>R</b>étine pâle"]
+            },
+
+            {
+                "titre": "Fond d'oeil d'OVCR",
+                "mnemo": "<b>OVCR</b>",
+                "liste": ["<b>O</b>edème rétinien, papillaire et maculaire", "<b>V</b>eines rétiniennes tortueuses et dilatées", "<b>N</b>odules cotonneux (dans la forme ischémique)", "Hémorragies intra-<b>R</b>étiniennes"]
+            },
+
+            {
+                "titre": "Signes de conjonctivite",
+                "mnemo": "<b>BILLARDS</b> <b>P</b>ourris",
+                "liste": ["<b>B</b>rûlure", "<b>I</b>rritation (sensation de grain de sable)", "<b>L</b>armoiement", "Sensibilité à la <b>L</b>umière", "<b>A</b>dénopathie pré-tragienne douloureuse", "<b>R</b>ougeur", "<b>D</b>émangeaisons", "<b>S</b>écrétion : claire (viral ou allergique), mucopurulente (bactérienne)", "Atteinte <b>P</b>alpébrale : follicule palpébral (viral), papille palpébrale (allergique)"]
             }
         ]
     },
@@ -98,6 +171,18 @@
                 "titre": "Ordre d'apparition des sinus de la face",
                 "mnemo": "<b>Hé</b> <b>M</b>es <b>F</b>es<b>S</b>es",
                 "liste": ["Sinus <b>e</b>thmoïdal : premiers mois de vie", "Sinus <b>m</b>axillaire : 3-4 ans", "Sinus <b>f</b>rontal : 5-10 ans", "Sinus <b>s</b>phénoïdal : 10-15 ans"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Orthopédie",
+        "emoji": "🦴",
+        "contenu": [
+            {
+                "titre": "Manoeuvre de conflit sous-acromial",
+                "mnemo": "<b>NYHA</b>",
+                "liste": ["<b>N</b>eer", "<b>Y</b>ocum", "<b>H</b>awkins", "Cross <b>A</b>rm"]
             }
         ]
     },
@@ -128,6 +213,12 @@
                 "titre": "Critères du score de Silverman",
                 "mnemo": "<b>B</b>é<b>B</b>é <b>TyrAn Geigne</b>",
                 "liste": ["<b>B</b>attement des ailes du nez", "<b>B</b>alancement thoraco-abdominal", "<b>Tir</b>age", "<b>En</b>tonnoir xyphoïdien", "<b>Geigne</b>ment expiratoire"]
+            },
+
+            {
+                "titre": "Types de réflexes archaïques",
+                "mnemo": "<b>SPAM</b> <b>A</b>utomatisme <b>M</b>oteur",
+                "liste": ["<b>S</b>uccion", "<b>P</b>oints cardinaux", "<b>A</b>ggripement", "Réflexe de <b>M</b>oro", "<b>A</b>llongement croisé", "<b>M</b>arche automatique"]
             }
         ]
     },
@@ -140,13 +231,19 @@
                 "titre": "Effets indésirables des anti-cholinergiques",
                 "mnemo": "Le <b>BAC</b> était trop <b>DUR</b>, appelons la <b>CGT</b>",
                 "liste": ["Sécheresse <b>B</b>uccale", "Troubles de l'<b>A</b>ccomodation", "<b>C</b>onstipation", "Troubles de la <b>D</b>églutition", "Rétention <b>U</b>rinaire", "<b>R</b>GO", "<b>C</b>onfusion", "<b>G</b>AFA", "<b>T</b>achycardie"]
+            },
+
+            {
+                "titre": "Facteurs de bon pronostic de schizophrénie",
+                "mnemo": "On est parti sur une <b>BON</b>ne <b>PISTE</b>",
+                "liste": ["<b>BON</b> fonctionnement pré-morbide", "<b>P</b>rise en charge précoce", "<b>I</b>nsight", "<b>S</b>exe féminin", "Début <b>T</b>ardif", "<b>E</b>nvironnement favorable"]
             }
         ]
     },
 
     {
         "nom": "Réanimation",
-        "emoji": "",
+        "emoji": "🛌",
         "contenu": [
             {
                 "titre": "Critères qSOFA",
@@ -154,8 +251,31 @@
                 "liste": ["PAS ≤ 100 mmHg", "FR ≥ 22/min", "Glasgow < 15"]
             }
         ]
+    },
+
+    {
+        "nom": "Rhumatologie",
+        "emoji": "🦵",
+        "contenu": [
+            {
+                "titre": "Signes radiographiques cardinaux d'arthrose",
+                "mnemo": "<b>POGO</b>",
+                "liste": ["<b>P</b>incement articulaire", "<b>O</b>stéocondensation sous-chondrale", "<b>G</b>éodes intra-osseux", "<b>O</b>stéophytose marginale"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Urologie",
+        "emoji": "🍆",
+        "contenu": [
+            {
+                "titre": "Etiologies d'oligo-asthéno-tératospermie",
+                "mnemo": "<b>C</b>'est <b>V</b>raiment <b>Idio</b>t une <b>Infection</b> <b>G</b>énéralisée chez un <b>Fumeur</b> <b>Profession</b>nel",
+                "liste": ["<b>C</b>ryptorchidie", "<b>V</b>aricocèle", "<b>Idio</b>pathique", "<b>Infection</b>", "<b>G</b>énétique : anomalie caryotypique, microdélétion du chromosome Y AZFc", "<b>Fumeur</b> : tabac/cannabis", "<b>Profession</b> : pesticides, toxiques"]
+            }
+        ]
     }
-    
 
     
 ]
