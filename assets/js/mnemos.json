@@ -19,6 +19,12 @@
                 "titre": "Etiologies médicamenteuses d'hyperlipidémie secondaire",
                 "mnemo": "<b>DC</b> (décès) par consommation de pâtes <b>CARBO</b>",
                 "liste": ["<b>D</b>iurétiques","<b>C</b>orticoïdes","<b>C</b>iclosporine","<b>A</b>ntirétroviraux","<b>R</b>étinoïdes","<b>B</b>eta-bloquants","<b>O</b>estrogènes"]
+            },
+
+            {
+                "titre": "Etiologies d'insuffisance cardiaque à débit augmenté",
+                "mnemo": "<b>DEBITA</b>",
+                "liste": ["<b>D</b>ystrophie osseuse de Paget","<b>E</b>ndocrinopathie (acromégalie)","<b>B</b>éri-béri","<b>I</b>RC","Hyper<b>T</b>hyroïdie","<b>A</b>némie chronique"]
             }
         ]
     },
@@ -129,6 +135,18 @@
                 "titre": "Cancers favorisés par l'alcool",
                 "mnemo": "<b>FORCES</b>",
                 "liste": ["<b>F</b>oie", "<b>OR</b>L", "<b>C</b>olorectal</b>", "O<b>E</b>sophage, <b>E</b>stomac", "<b>S</b>ein"]
+            },
+
+            {
+                "titre": "Facteurs pronostiques de cancer de l'ovaire",
+                "mnemo": "<b>PMA</b> <b>H</b>igh <b>L</b>evel",
+                "liste": ["<b>P</b>ilule oestro-progestative", "<b>M</b>ultiparité", "<b>A</b>llaitement</b>", "<b>H</b>ystérectomie, <b>L</b>igature des trompes"]
+            },
+
+            {
+                "titre": "Cancers ostéophiles",
+                "mnemo": "<b>PPPRST</b>",
+                "liste": ["<b>P</b>oumon", "<b>M</b>ultiparité", "<b>P</b>rostate</b>", "<b>P</b>eau, <b>R</b>ein", "<b>S</b>ein", "<b>T</b>hyroïde"]
             }
         ]
     },
@@ -189,7 +207,7 @@
 
     {
         "nom": "Pneumologie",
-        "emoji": "",
+        "emoji": "🚭",
         "contenu": [
             {
                 "titre": "Germes d'abcès pulmonaire",
@@ -201,6 +219,12 @@
                 "titre": "Critères du questionnaire ACT",
                 "mnemo": "Mon asthme est contrôlé donc <b>Je</b> <b>BAND</b>e",
                 "liste": ["Auto-évaluation (<b>Je</b>)", "<b>B</b>DCA", "<b>A</b>ctivité", "<b>N</b>octurne", "<b>D</b>yspnée"]
+            },
+
+            {
+                "titre": "Médicaments à risques d'interaction avec la rifampicine",
+                "mnemo": "Sa (rifan)-piscine était toute sale, il la <b>DECAPA</b> <b>M</b>inutieusement",
+                "liste": ["<b>D</b>igitaliques", "Anti-<b>E</b>pileptiques", "<b>C</b>orticoïdes", "<b>A</b>nticoagulants (AVK ++)", "<b>P</b>ilule oestro-progestative", "<b>A</b>ntirétroviraux", "<b>M</b>éthadone"]
             }
         ]
     },
@@ -276,6 +300,5 @@
             }
         ]
     }
-
     
 ]
