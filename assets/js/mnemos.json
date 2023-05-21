@@ -1,0 +1,161 @@
+[
+    {
+        "nom": "Cardiologie",
+        "emoji": "❤️",
+        "contenu": [
+            {
+                "titre": "Facters favorisants d'hypertension artérielle",
+                "mnemo": "<b>G<\/b>ros <b>FANS<\/b> de <b>SODAS<\/b>",
+                "liste": ["<b>G<\/b>énétique","<b>F<\/b>emme","<b>Â<\/b>ge","<b>N<\/b>oir","<b>S<\/b>édentarité","<b>S<\/b>el","<b>O<\/b>bésité","couche sociale <b>D<\/b>éfavorisée","<b>A<\/b>lcool","<b>S<\/b>tress"]
+            },
+
+            {
+                "titre": "Etiologies de sus-décalage ST à l'ECG",
+                "mnemo": "<b>P</b>aris a des <b>MST</b>",
+                "liste": ["<b>P</b>éricardite","<b>A</b>névrisme du ventricule gauche","<b>R</b>epolarisation précoce","<b>I</b>nfarctus du myocarde","<b>S</b>pasme coronarien","<b>M</b>yocardite aiguë","<b>B</b>rugada","<b>T</b>akotsubo"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Dermatologie",
+        "emoji":"🖐",
+        "contenu": [
+            {
+                "titre": "Critères de purpura vasculaire",
+                "mnemo": "<b>PID</b>",
+                "liste": ["<b>P</b>olymorphe", "<b>I</b>nfiltrant", "<b>D</b>éclive"]
+            }
+        ]
+    },
+        
+    {
+        "nom": "HGE",
+        "emoji": "💩",
+        "contenu": [
+            {
+                "titre": "Facteurs de risque de colite microscopique",
+                "mnemo": "<b>VAL</b>e<b>TS</b>",
+                "liste": ["<b>V</b>einotoniques", "<b>A</b>INS", "<b>L</b>ansoprazole", "<b>T</b>iclopidine", "<b>S</b>ertraline"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Infectiologie",
+        "emoji": "🦠",
+        "contenu": [
+            {
+                "titre": "Germes de méningoradiculite infectieuse",
+                "mnemo": "<b>LOCH</b> <b>V</b>ert et <b>V</b>aste",
+                "liste": ["<b>L</b>yme", "<b>O</b>reillons", "<b>C</b>oxsackievirus","<b>H</b>erpesvirus", "<b>V</b>ZV", "<b>V</b>IH"]
+            },
+
+            {
+                "titre": "Médicaments allongeant le QT",
+                "mnemo": "<b>F</b>ou <b>MANIAQ</b>",
+                "liste": ["<b>F</b>luoroquinolone", "<b>M</b>acrolides + kétolides", "<b>A</b>ntihistaminiques de première génération", "<b>N</b>euroleptiques", "<b>I</b>SRS", "<b>A</b>ntiarythmiques", "<b>Q</b>uinine"]
+            }
+        ]
+    },
+
+    {
+        "nom": "LCA",
+        "emoji": "📊",
+        "contenu": [
+            {
+                "titre": "Critères de Bradford-Hill",
+                "mnemo": "Tranquille en train de c<b>Hill</b>, j'<b>ETAIS PEACE</b>",
+                "liste": ["Relation dose-<b>E</b>ffet", "<b>T</b>emporalité", "<b>A</b>ssociation forte", "cohérence <b>I</b>nterne", "<b>S</b>pécificité", "<b>P</b>lausibilité biologique", "cohérence <b>E</b>xterne", "<b>A</b>nalogie", "<b>C</b>onstance géographique", "preuves <b>E</b>xpérimentales"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Neurologie",
+        "emoji": "🧠",
+        "contenu": [
+            {
+                "titre": "Etiologies d'hémorragie cérébrale",
+                "mnemo": "<b>HEMAATT</b>ome",
+                "liste": ["<b>H</b>TA", "<b>E</b>ndocardite infectieuse", "<b>M</b>AV", "<b>A</b>thérosclérose", "<b>A</b>ngiopathie amyloïde", "<b>A</b>VC ischémique", "<b>T</b>raumatisme crânien", "<b>T</b>raitement anticoagulant"]
+
+            }
+        ]
+    },
+
+    {
+        "nom": "ORL",
+        "emoji": "👃👂",
+        "contenu": [
+            {
+                "titre": "Critères de gravité d'épistaxis",
+                "mnemo": "<b>ARTE</b>",
+                "liste": ["<b>A</b>bondance : volume > 200 mL ou bilatéralité", "<b>R</b>épétition", "<b>T</b>errain", "<b>E</b>volution"]
+            },
+
+            {
+                "titre": "Ordre d'apparition des sinus de la face",
+                "mnemo": "<b>Hé</b> <b>M</b>es <b>F</b>es<b>S</b>es",
+                "liste": ["Sinus <b>e</b>thmoïdal : premiers mois de vie", "Sinus <b>m</b>axillaire : 3-4 ans", "Sinus <b>f</b>rontal : 5-10 ans", "Sinus <b>s</b>phénoïdal : 10-15 ans"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Pneumologie",
+        "emoji": "",
+        "contenu": [
+            {
+                "titre": "Germes d'abcès pulmonaire",
+                "mnemo": "<b>2SNAK</b>",
+                "liste":["<b>S</b>. aureus", "<b>S</b>treptocoques oraux", "<b>N</b>ocardia", "<b>A</b>naérobies", "<b>K</b>lebsiella pneumoniae"]
+            },
+
+            {
+                "titre": "Critères du questionnaire ACT",
+                "mnemo": "Mon asthme est contrôlé donc <b>Je</b> <b>BAND</b>e",
+                "liste": ["Auto-évaluation (<b>Je</b>)", "<b>B</b>DCA", "<b>A</b>ctivité", "<b>N</b>octurne", "<b>D</b>yspnée"]
+            }
+        ]
+    },
+
+    {
+        "nom":"Pédiatrie",
+        "emoji":"👶",
+        "contenu": [
+            {
+                "titre": "Critères du score de Silverman",
+                "mnemo": "<b>B</b>é<b>B</b>é <b>TyrAn Geigne</b>",
+                "liste": ["<b>B</b>attement des ailes du nez", "<b>B</b>alancement thoraco-abdominal", "<b>Tir</b>age", "<b>En</b>tonnoir xyphoïdien", "<b>Geigne</b>ment expiratoire"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Psychiatrie",
+        "emoji": "🤪",
+        "contenu": [
+            {
+                "titre": "Effets indésirables des anti-cholinergiques",
+                "mnemo": "Le <b>BAC</b> était trop <b>DUR</b>, appelons la <b>CGT</b>",
+                "liste": ["Sécheresse <b>B</b>uccale", "Troubles de l'<b>A</b>ccomodation", "<b>C</b>onstipation", "Troubles de la <b>D</b>églutition", "Rétention <b>U</b>rinaire", "<b>R</b>GO", "<b>C</b>onfusion", "<b>G</b>AFA", "<b>T</b>achycardie"]
+            }
+        ]
+    },
+
+    {
+        "nom": "Réanimation",
+        "emoji": "",
+        "contenu": [
+            {
+                "titre": "Critères qSOFA",
+                "mnemo": "Je bois le <b>sang (100)</b> du <b>vin de (22)</b> Glasgow avec le <b>15 de France</b> (G15)",
+                "liste": ["PAS ≤ 100 mmHg", "FR ≥ 22/min", "Glasgow < 15"]
+            }
+        ]
+    }
+    
+
+    
+]
