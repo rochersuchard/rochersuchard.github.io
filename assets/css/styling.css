@@ -7,8 +7,11 @@
 }
 
 body {
-    margin: 3em;
-    margin-right: 5em;
+    margin: 0px;
+}
+
+main {
+    margin : 1em;
 }
 
 p {
@@ -76,4 +79,63 @@ h6 {
 
 strong {
     font-weight: bold;
+}
+
+header {
+    display: flex;
+}
+
+header .fixed {
+    position: fixed;
+    top: 0px;
+}
+.navbar {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    color: white;
+}
+
+.logo
+{
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 0.8em 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    padding : 0.5em;
+    list-style-type: none;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    transition: 0.5s;
+    border-radius: 50px;
+}
+
+.navbar li a:hover, li a.active {
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
