@@ -16,6 +16,7 @@ main {
 
 p {
     margin: 0 0 2em 0;
+    font-size: 1.1em;
 }
 
 b
@@ -138,4 +139,91 @@ header .fixed {
 .navbar li a:hover, li a.active {
     background-color: rgb(255, 255, 255);
     color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 0%;
+}
+
+.containerOptions {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.containerOptions > * {
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4em;
+}
+.containerOptions * {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerOptions > *{
+    margin: 0.2em;
+    padding: 0.5em 2em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(193, 206, 216);
+    border-radius: 20px;
+    background-color:rgb(245, 241, 238);
+}
+
+.selection > * {
+    border-style: solid;
+    border-color:#c0c0c0;
+    border-width: 1.5px;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    margin : 0.5em 0;
+}
+
+.unclicked {
+    color: black;
+    background-color: white;
+    transition-delay: 50ms;
+}
+.unclicked:hover {
+    background-color: rgb(216, 216, 216);
+    cursor: pointer;
+}
+
+.clicked {
+    color: white;
+    background-color: rgb(245, 171, 75);
+}
+
+.containerOptions > * > * {
+    font-weight: bold;
+}
+
+#containerTable {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    justify-content: stretch;
+    align-items: center;
+    column-gap: 5em;
+}
+
+#technologieslogos {
+    display: flex;
+    margin-right : 75%
+}
+
+#technologieslogos > * {
+    flex: 1 1;
+}
+
+td, th {
+    border: 1px black solid;
+}
+
+th {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    font-weight: bold;
 }

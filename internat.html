@@ -4,16 +4,17 @@
         <title>Centrale Médecine</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/styling.css">
+        <script type="module" src="assets/js/calculatrice.js"></script>
     </head>
     <body>
         <header>
             <div class="navbar">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a class="active" href="cours.html">Cours</a></li>
+                    <li><a href="cours.html">Cours</a></li>
                     <li><a href="mnemo.html">Moyens mnémotechniques</a></li>
                     <li><a href="organisation.html">Organisation du travail</a></li>
-                    <li><a href="internat.html">Internat</a></li>
+                    <li><a class="active" href="internat.html">Internat</a></li>
                     <li><a href="aide.html">Aide psychologique</a></li>
                     <li><a href="apropos.html">A propos</a></li>
                 </ul>
@@ -21,7 +22,54 @@
             </div>
         </header>
         <main>
-            <p>En cours de construction</p>
+            <div class="container">
+                <div class="containerOptions">
+                    <div class="annee">
+                        <div>Année</div>
+                        <div class="selection">
+                            <div id="ffi">FFI</div>
+                            <div id="premiereAnnee">1e</div>
+                            <div id="deuxiemeAnnee">2e</div>
+                            <div id="troisiemeAnnee">3e</div>
+                            <div id="quatriemeAnnee">4e</div>
+                            <div id="cinquiemeAnnee">5e</div>
+                        </div>
+                    </div>
+                    <div class="semaine">
+                        <div>Gardes semaine</div>
+                        <div class="selection">
+                            <div id="moinsSemaine">-</div>
+                            <div id="nbSemaine"></div>
+                            <div id="plusSemaine">+</div>
+                        </div>
+                    </div>
+                    <div class="WE">
+                        <div>Gardes WE</div>
+                        <div class="selection">
+                            <div id="moinsWE">-</div>
+                            <div id="nbWE"></div>
+                            <div id="plusWE">+</div>
+                        </div>
+                    </div>
+                    <div class="loge">
+                        <div>Logé</div>
+                        <div class="selection">
+                            <div id="ouiLoge">Oui</div>
+                            <div id="nonLoge">Non</div>
+                        </div>
+                    </div>
+                    <div class="nourri">
+                        <div>Nourri</div>
+                        <div class="selection">
+                            <div id="ouiLoge">Oui</div>
+                            <div id="nonLoge">Non</div>
+                        </div>
+                    </div>
+                </div>
+
+                <table id="tableContainer"></table>
+            </div>
+
         </main>
     </body>
 </html>
