@@ -1,6 +1,7 @@
 const ids = ["#ffi", "#premiereAnnee", "#deuxiemeAnnee", "#troisiemeAnnee", "#quatriemeAnnee", "#cinquiemeAnnee"];
+const tauxTraitement = 1.0;
 const traitementsBase = [17482.22, 19119.55, 21165.75, 27988.47, 28010.20, 28027.80];
-const indemniteSujetion = 435.18;
+const indemniteBase = 435.18;
 const montantGardeSemaine = 154.22;
 const montantGardeWE = 168.71;
 const taxes = [
@@ -42,9 +43,6 @@ let boutonsAnnees = [];
 let currentlyClickedBouton;
 let traitementBase = traitementsBase[0];
 
-let tab = new Table(document.querySelector("#tableContainer"));
-tab.construire();
-
 for(let i = 0 ; i < 6 ; i++)
 {
     boutonsAnnees.push(
@@ -70,7 +68,7 @@ for(let i = 0 ; i < 6 ; i++)
             currentlyClickedBouton = boutonsAnnees[i];
         }
 
-        rafraichir();
+        tab.rafraichir();
 
     });
 }
@@ -85,16 +83,16 @@ const moinsSemaineElement = document.querySelector("#moinsSemaine");
 moinsSemaineElement.classList.add("unclicked");
 moinsSemaineElement.addEventListener("click", function (){
     if(nbSemaineElement.innerText != 0){nbSemaineElement.innerText --;}
-    if(nbSemaineElement.innerText == 0 && nbWEElement.innerText == 0){document.querySelector("#gardes").style.display = "none";}
-    rafraichir();
+    if(nbSemaineElement.innerText == 0){tab.getLineElement(3).style.display = "none";}
+    tab.rafraichir();
 });
 
 const plusSemaineElement = document.querySelector("#plusSemaine");
 plusSemaineElement.classList.add("unclicked");
 plusSemaineElement.addEventListener("click", function (){
     nbSemaineElement.innerText ++;
-    if(nbSemaineElement.innerText > 0 || nbWEElement.innerText > 0){document.querySelector("#gardes").style.display = "table-row";}
-    rafraichir();
+    if(nbSemaineElement.innerText > 0){tab.getLineElement(3).style.display = "table-row";}
+    tab.rafraichir();
 });
 
 nbWEElement.innerText = "0";
@@ -103,24 +101,27 @@ const moinsWEElement = document.querySelector("#moinsWE");
 moinsWEElement.classList.add("unclicked");
 moinsWEElement.addEventListener("click", function (){
     if(nbWEElement.innerText != 0){nbWEElement.innerText --;}
-    if(nbSemaineElement.innerText == 0 && nbWEElement.innerText == 0){document.querySelector("#gardes").style.display = "none";}
-    rafraichir();
+    if(nbWEElement.innerText == 0){tab.getLineElement(4).style.display = "none";}
+    tab.rafraichir();
 });
 
 const plusWEElement = document.querySelector("#plusWE");
 plusWEElement.classList.add("unclicked");
 plusWEElement.addEventListener("click", function (){
     nbWEElement.innerText ++;
-    if(nbSemaineElement.innerText > 0 || nbWEElement.innerText > 0){document.querySelector("#gardes").style.display = "table-row";}
-    rafraichir();
+    if(nbWEElement.innerText > 0){tab.getLineElement(4).style.display = "table-row";}
+    tab.rafraichir();
 });
 
 class Table
 {
     content = [
-        {type: "th", cells: ["Traitement LIBELLE", "NB ou TAUX", "BASE", "TOTAL"], cellElements: []},
-        {type: "td", cells: ["Traitement Base Médical", "", "", ""], cellElements: []},
-        {type: "td", cells: ["Indémnité Sujétion Internes", 1.00.toFixed(2), indemniteSujetion, ""], cellElements: []}
+        {type: "th", cells: ["Traitement LIBELLE", "NB ou TAUX", "BASE", "TOTAL"], lineElement: null, cellElements: []},
+        {type: "td", cells: ["Traitement Base Médical", 1.00.toFixed(2), "", ""], lineElement: null, cellElements: []},
+        {type: "td", cells: ["Indémnité Sujétion Internes", 1.00.toFixed(2), indemniteBase, ""], lineElement: null, cellElements: []},
+        {type: "td", cells: ["Gardes Semaine", "", montantGardeSemaine, ""], lineElement: null, cellElements: []},
+        {type: "td", cells: ["Gardes WE", "", montantGardeWE, ""], lineElement: null, cellElements: []},
+        {type: "th", cells: ["Brut Imposable", "", "", ""], lineElement: null, cellElements: []}
     ];
 
     constructor(tableElement)
@@ -140,12 +141,38 @@ class Table
                 lineElement.appendChild(cellElement);
                 line.cellElements.push(cellElement);
             }
+
+            line.lineElement = lineElement;
+
         }
+        this.getLineElement(3).style.display = "none";
+        this.getLineElement(4).style.display = "none";
         this.rafraichir();
     }
     
     rafraichir()
     {
-        this.content[1].cellElements[2].innerText = (currentlyClickedBouton.traitementBase/12).toFixed(2);
+        this.setCell(1, 2, (currentlyClickedBouton.traitementBase/12).toFixed(2));
+        this.setCell(3, 1, nbSemaineElement.innerText);
+        this.setCell(4, 1, nbWEElement.innerText);
+        
+    }
+
+    getCell(line, column)
+    {
+        return this.content[line].cellElements[column].innerText;
+    }
+
+    setCell(line, column, text)
+    {
+        this.content[line].cellElements[column].innerText = text;
+    }
+
+    getLineElement(line)
+    {
+        return this.content[line].lineElement;
     }
 }
+
+let tab = new Table(document.querySelector("#tableContainer"));
+tab.construire();
