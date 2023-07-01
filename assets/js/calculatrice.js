@@ -1,42 +1,47 @@
-const ids = ["#ffi", "#premiereAnnee", "#deuxiemeAnnee", "#troisiemeAnnee", "#quatriemeAnnee", "#cinquiemeAnnee"];
-const tauxTraitement = 1.0;
+const ids = ["#ffi", "#premiereAnnee", "#deuxiemeAnnee", "#troisiemeAnnee", "#quatriemeAnnee", "#cinquiemeAnnee"]
+
 const traitementsBase = [17482.22, 19119.55, 21165.75, 27988.47, 28010.20, 28027.80];
+const traitementTaux = 1.00;
+
 const indemniteBase = 435.18;
+const indemniteTaux = 1.00;
+
 const montantGardeSemaine = 154.22;
 const montantGardeWE = 168.71;
-const taxes = [
-    {
-        nom: "S.S Totalité",
-        taux: 1.7,
-        base: 1
-    },
-    {
-        nom: "S.S Plafonnée",
-        taux: 6.9,
-        base: 1
-    },
-    {
-        nom: "C.R.D.S",
-        taux: 0.5,
-        base: 0.9825
-    },
-    {
-        nom: "C.S.G Déductible",
-        taux: 6.8,
-        base: 0.9825
-    },
-    {
-        nom: "C.S.G Non Déductible",
-        taux: 2.4,
-        base: 0.9825
-    },
-    {
-        nom: "IRCANTEC Tranche A",
-        taux: 2.8,
-        base: 2/3
-    }
 
-]
+const SSTotTaux = 0.0170;
+const SSTotBase = 1;
+
+const SSPlafTaux = 0.0690;
+const SSPlafBase = 1;
+
+const CRDSTaux = 0.005;
+const CRDSBase = 0.9825;
+
+const CSGDedTaux = 0.068;
+const CSGDedBase = 0.9825;
+
+const CSGNonDedTaux = 0.024;
+const CSGDNonDedBase = 0.9825;
+
+const IRCANTECTaux = 0.028;
+const IRCANTECBase = 2/3;
+
+const content = [
+    {type: "th", cells: ["Traitement LIBELLE", "NB ou TAUX", "BASE", "TOTAL"]},
+    {type: "td", cells: ["Traitement Base Médical", traitementTaux.toFixed(2), "", ""]},
+    {type: "td", cells: ["Indémnité Sujétion Internes", indemniteTaux.toFixed(2), indemniteBase, ""]},
+    {type: "td", cells: ["Gardes Semaine", "", montantGardeSemaine, ""]},
+    {type: "td", cells: ["Gardes WE", "", montantGardeWE, ""]},
+    {type: "th", cells: ["Brut Imposable", "", "", ""]},
+    {type: "td", cells: ["S.S Totalité", (SSTotTaux*100).toFixed(2) + "%", "", ""]},
+    {type: "td", cells: ["S.S Plafonnée", (SSPlafTaux*100).toFixed(2) + "%", "", ""]},
+    {type: "td", cells: ["C.R.D.S", (CRDSTaux*100).toFixed(2) + "%", "", ""]},
+    {type: "td", cells: ["C.S.G Déductible", (CSGDedTaux*100).toFixed(2) + "%", "", ""]},
+    {type: "td", cells: ["C.S.G Non Déductible", (CSGNonDedTaux*100).toFixed(2) + "%", "", ""]},
+    {type: "td", cells: ["IRANTEC Tranche A", (IRCANTECTaux*100).toFixed(2) + "%", "", ""]},
+    {type: "th", cells: ["Total Net", "", "", ""]}
+];
 
 let boutonsAnnees = [];
 
@@ -68,7 +73,7 @@ for(let i = 0 ; i < 6 ; i++)
             currentlyClickedBouton = boutonsAnnees[i];
         }
 
-        tab.rafraichir();
+        tab.refreshTraitement();
 
     });
 }
@@ -84,7 +89,7 @@ moinsSemaineElement.classList.add("unclicked");
 moinsSemaineElement.addEventListener("click", function (){
     if(nbSemaineElement.innerText != 0){nbSemaineElement.innerText --;}
     if(nbSemaineElement.innerText == 0){tab.getLineElement(3).style.display = "none";}
-    tab.rafraichir();
+    tab.refreshGardeSemaine();
 });
 
 const plusSemaineElement = document.querySelector("#plusSemaine");
@@ -92,7 +97,7 @@ plusSemaineElement.classList.add("unclicked");
 plusSemaineElement.addEventListener("click", function (){
     nbSemaineElement.innerText ++;
     if(nbSemaineElement.innerText > 0){tab.getLineElement(3).style.display = "table-row";}
-    tab.rafraichir();
+    tab.refreshGardeSemaine();
 });
 
 nbWEElement.innerText = "0";
@@ -102,7 +107,7 @@ moinsWEElement.classList.add("unclicked");
 moinsWEElement.addEventListener("click", function (){
     if(nbWEElement.innerText != 0){nbWEElement.innerText --;}
     if(nbWEElement.innerText == 0){tab.getLineElement(4).style.display = "none";}
-    tab.rafraichir();
+    tab.refreshGardeWE();
 });
 
 const plusWEElement = document.querySelector("#plusWE");
@@ -110,69 +115,137 @@ plusWEElement.classList.add("unclicked");
 plusWEElement.addEventListener("click", function (){
     nbWEElement.innerText ++;
     if(nbWEElement.innerText > 0){tab.getLineElement(4).style.display = "table-row";}
-    tab.rafraichir();
+    tab.refreshGardeWE();
 });
 
 class Table
 {
-    content = [
-        {type: "th", cells: ["Traitement LIBELLE", "NB ou TAUX", "BASE", "TOTAL"], lineElement: null, cellElements: []},
-        {type: "td", cells: ["Traitement Base Médical", 1.00.toFixed(2), "", ""], lineElement: null, cellElements: []},
-        {type: "td", cells: ["Indémnité Sujétion Internes", 1.00.toFixed(2), indemniteBase, ""], lineElement: null, cellElements: []},
-        {type: "td", cells: ["Gardes Semaine", "", montantGardeSemaine, ""], lineElement: null, cellElements: []},
-        {type: "td", cells: ["Gardes WE", "", montantGardeWE, ""], lineElement: null, cellElements: []},
-        {type: "th", cells: ["Brut Imposable", "", "", ""], lineElement: null, cellElements: []}
-    ];
+    container = null;
+    content = [];
+    contentElements = [];
 
-    constructor(tableElement)
+    constructor(container, content)
     {
-        this.tableElement = tableElement;
+        this.container = container;
+        this.content = content;
     }
 
-    construire()
+    build()
     {
         for(let line of this.content)
         {
-            const lineElement = this.tableElement.insertRow(-1);
+            const lineElement = this.container.insertRow(-1);
+            this.contentElements.push({lineElement: lineElement, cellElements: []});
+
             for(let cell of line.cells)
             {
                 const cellElement = document.createElement(line.type);
                 cellElement.innerText = cell;
                 lineElement.appendChild(cellElement);
-                line.cellElements.push(cellElement);
+                this.contentElements[this.contentElements.length - 1].cellElements.push(cellElement);
             }
-
-            line.lineElement = lineElement;
 
         }
         this.getLineElement(3).style.display = "none";
         this.getLineElement(4).style.display = "none";
-        this.rafraichir();
+
+        this.refreshTotal(2);
+
+        this.refreshTraitement();
+        this.refreshGardeSemaine();
+        this.refreshGardeWE();
+    }
+
+    refreshTotal(line)
+    {
+        this.setCell(line, 3, (this.getCell(line, 1)*this.getCell(line, 2)).toFixed(2));
     }
     
-    rafraichir()
+    refreshTraitement()
     {
         this.setCell(1, 2, (currentlyClickedBouton.traitementBase/12).toFixed(2));
+        this.refreshTotal(1);
+        this.refreshBrut();
+    }
+
+    refreshGardeSemaine()
+    {
         this.setCell(3, 1, nbSemaineElement.innerText);
+        this.refreshTotal(3);
+        this.refreshBrut();
+    }
+
+    refreshGardeWE()
+    {
         this.setCell(4, 1, nbWEElement.innerText);
-        
+        this.refreshTotal(4);
+        this.refreshBrut();
+    }
+
+    refreshBrut()
+    {
+        let somme = 0;
+
+        for(let i = 1 ; i < 5 ; i++)
+        {
+            somme += +this.getCell(i, 3);
+        }
+
+        this.setCell(5, 3, somme.toFixed(2));
+
+        this.refreshTaxes();
+    }
+
+    refreshTaxes()
+    {
+        this.setCell(6, 2, (SSTotBase*this.getCell(5,3)).toFixed(2));
+        this.setCell(6, 3, "-" + (SSTotTaux*this.getCell(6,2)).toFixed(2));
+
+        this.setCell(7, 2, (SSPlafBase*this.getCell(5,3)).toFixed(2));
+        this.setCell(7, 3, "-" + (SSPlafTaux*this.getCell(7,2)).toFixed(2));
+
+        this.setCell(8, 2, (CRDSBase*this.getCell(5,3)).toFixed(2));
+        this.setCell(8, 3, "-" + (CRDSTaux*this.getCell(8,2)).toFixed(2));
+
+        this.setCell(9, 2, (CSGDedBase*this.getCell(5,3)).toFixed(2));
+        this.setCell(9, 3, "-" + (CSGDedTaux*this.getCell(9,2)).toFixed(2));
+
+        this.setCell(10, 2, (CSGDNonDedBase*this.getCell(5,3)).toFixed(2));
+        this.setCell(10, 3, "-" + (CSGNonDedTaux*this.getCell(10,2)).toFixed(2));
+
+        this.setCell(11, 2, (IRCANTECBase*this.getCell(5,3)).toFixed(2));
+        this.setCell(11, 3, "-" + (IRCANTECTaux*this.getCell(11,2)).toFixed(2));
+
+        this.refreshNet();
+    }
+
+    refreshNet()
+    {
+        let somme = this.getCell(5, 3);
+
+        for(let i = 6 ; i < 12 ; i++)
+        {
+            somme -= this.getCell(i, 3).substring(1);
+        }
+
+        this.setCell(12, 3, somme.toFixed(2));
     }
 
     getCell(line, column)
     {
-        return this.content[line].cellElements[column].innerText;
+        return this.contentElements[line].cellElements[column].innerText;
     }
 
     setCell(line, column, text)
     {
-        this.content[line].cellElements[column].innerText = text;
+        this.contentElements[line].cellElements[column].innerText = text;
     }
 
     getLineElement(line)
     {
-        return this.content[line].lineElement;
+        return this.contentElements[line].lineElement;
     }
 }
 
-let tab = new Table(document.querySelector("#tableContainer"));
-tab.construire();
+let tab = new Table(document.querySelector("#tableContainer"), content);
+tab.build();
