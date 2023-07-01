@@ -20,6 +20,15 @@ p {
     font-size: 1.1em;
 }
 
+a {
+    color: rgb(39, 39, 39);
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+}
+
 b
 {
     font-weight : 900;
@@ -81,6 +90,15 @@ h6 {
 
 strong {
     font-weight: bold;
+}
+
+.titreCollege {
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+.titreCollege:hover {
+    background-color:rgb(211, 234, 255);
 }
 
 header {
@@ -154,7 +172,7 @@ header .fixed {
 .containerOptions {
     display: flex;
     flex-direction: column;
-    margin-right: 20%;
+    margin-right: 5%;
 }
 
 .containerOptions > * {
@@ -207,7 +225,7 @@ header .fixed {
 
 #containerTable {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    width: 100%;
     justify-content: stretch;
     align-items: center;
     column-gap: 5em;
@@ -227,7 +245,7 @@ td, th {
 }
 
 th {
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(77, 89, 100);
     color: white;
     font-weight: bold;
 }

@@ -5,23 +5,7 @@ let response = await fetch("assets/js/mnemos.json",{
 });
 let colleges = await response.json();
 
-let sectionSommaire = document.querySelector("#sommaire");
 let sectionMnemo = document.querySelector("#mnemos");
-
-let ULElement = document.createElement("ul");
-sectionSommaire.appendChild(ULElement);
-
-for(let college of colleges)
-{
-
-    let LIElement = document.createElement("li");
-    ULElement.appendChild(LIElement);
-    let AElement = document.createElement("a");
-    LIElement.appendChild(AElement);
-    AElement.innerText = college.nom;
-    AElement.setAttribute("href", "#mm-" + college.nom.toLowerCase());
-
-}
 
 for(let college of colleges)
 {
@@ -34,10 +18,13 @@ for(let college of colleges)
     let titre = college.nom;
     titreCollege.innerHTML = titre + "&nbsp&nbsp" + college.emoji;
     collegeElement.appendChild(titreCollege);
+    const contenuElement = document.createElement("div");
+    collegeElement.appendChild(contenuElement);
+    
     for(let item of (college.contenu))
     {
         let itemElement = document.createElement("div");
-        collegeElement.appendChild(itemElement);
+        contenuElement.appendChild(itemElement);
 
         itemElement.setAttribute("class", "item-border");
         
@@ -59,4 +46,18 @@ for(let college of colleges)
             ULElement.appendChild(LIElement);
         }
     }
+
+    contenuElement.style.display = "none";
+
+    titreCollege.addEventListener("click", function(){
+        if(contenuElement.style.display == "none")
+        {
+            contenuElement.style.display = "block"
+        }
+
+        else
+        {
+            contenuElement.style.display = "none"
+        }
+    })
 }
