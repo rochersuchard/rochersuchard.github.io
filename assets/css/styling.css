@@ -335,6 +335,7 @@ th {
 .tile:hover {
     width: 28%;
     margin: 6.25%;
+    color: black;
 }
 
 .tile div {
