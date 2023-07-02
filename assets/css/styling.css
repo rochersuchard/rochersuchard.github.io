@@ -112,7 +112,6 @@ header .fixed {
 .navbar {
     background-color: #ff8f53;
     margin: 0;
-    margin-bottom: 3em;
     border-top: solid rgb(188, 188, 188) 1px;
     border-bottom: solid rgb(118, 141, 165) 1px;
     padding: 0;
@@ -122,7 +121,6 @@ header .fixed {
     left: 0;
     justify-content: space-between;
     text-align: center;
-    color: white;
 }
 
 .logo
@@ -133,6 +131,11 @@ header .fixed {
     padding: 0.8em 2em;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #fffbf8;
+}
+
+.logo:hover {
+    color: rgb(255, 255, 255);
 }
 
 .navbar ul {
@@ -149,7 +152,7 @@ header .fixed {
 
 .navbar li a {
     display: block;
-    color: white;
+    color: #fffbf8;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -161,6 +164,15 @@ header .fixed {
 .navbar li a:hover, li a.active {
     background-color: rgb(255, 255, 255);
     color: black;
+}
+
+#path {
+    margin-bottom: 3em;
+}
+
+#path a {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .container {
@@ -233,7 +245,8 @@ header .fixed {
 
 #technologieslogos {
     display: flex;
-    margin-right : 75%
+    width: 30%;
+    column-gap: 6%;
 }
 
 #technologieslogos > * {
@@ -280,4 +293,84 @@ th {
     justify-content: space-between;
     column-gap: 1em;
 
+}
+
+.mail {
+    display: flex;
+    align-items: center;
+    background-color: rgb(237, 246, 255);
+    border: solid grey 1px;
+    margin: 0 50% 0 0;
+    padding: 0 0 0 1em;
+    column-gap: 2em;
+    font-size: large;
+    cursor: pointer;
+}
+
+.mail:hover {
+    background-color: #CFE5FF;
+}
+
+.financeGrid {
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.tile {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 26%;
+    transition: 700ms;
+    aspect-ratio: 1 / 1;
+    border-radius: 1em;
+    position: relative;
+    margin: 7%;
+}
+
+.tile:hover {
+    width: 28%;
+    margin: 6.25%;
+}
+
+.tile div {
+    font-weight: bolder;
+}
+
+.tile img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#imgFinance1Purple {
+    opacity: 0;
+    transition: 700ms;
+}
+
+#imgFinance1Purple:hover {
+    opacity: 100%;
+}
+
+#imgFinance2Purple {
+    opacity: 0;
+    transition: 700ms;
+}
+
+#imgFinance2Purple:hover {
+    opacity: 100%;
+}
+
+#imgFinance3Purple {
+    opacity: 0;
+    transition: 700ms;
+}
+
+#imgFinance3Purple:hover {
+    opacity: 100%;
 }

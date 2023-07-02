@@ -4,27 +4,27 @@
         <title>Centrale Médecine</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="assets/css/styling.css">
+        <script type="module" src="assets/js/navbar.js"></script>
+        <script type="module" src="assets/js/path.js"></script>
     </head>
     <body>
         <header>
             <div class="navbar">
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a class="active" href="cours.html">Cours</a></li>
-                    <li><a href="mnemo.html">Moyens mnémotechniques</a></li>
-                    <li><a href="organisation.html">Organisation du travail</a></li>
-                    <li><a href="internat.html">Internat</a></li>
-                    <li><a href="aide.html">Aide psychologique</a></li>
-                    <li><a href="apropos.html">A propos</a></li>
-                </ul>
-                <div class="logo">Centrale Médecine</div>
+                <a href="index" class="logo">Centrale Médecine</a>
             </div>
         </header>
         <main>
+            <div id="path"></div>
             <h1>A propos</h1>
                 <h2>A propos de moi</h2>
                     <p>Je suis interne en radiologie en 2e semestre. Je m'intéresse également à l'informatique, d'où l'envie de créer de site.</p>
                     <p>En cas de remarques ou de suggestions sur le site, n'hésitez pas à rentrer en contact avec moi !</p>
+                    <a href="mailto:centralemedecine@gmail.com" class="mail">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110">
+                            <path stroke="#000" stroke-width="7" fill="none" d="m7,20h98v72H7zl44,44q5,4 10,0l44-44M7,92l36-36m26,0 36,36"/>
+                        </svg>
+                        centralemedecine@gmail.com
+                    </a>
                 <h2>A propos du site</h2>
                 <p>Codé en HTML, CSS et Javascript</p>
                 <div id="technologieslogos">
