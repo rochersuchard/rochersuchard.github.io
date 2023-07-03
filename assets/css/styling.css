@@ -338,6 +338,7 @@ th {
 
 .tile div {
     font-weight: bolder;
+    font-size: 1.4vw;
 }
 
 .tile img {
