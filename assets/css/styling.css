@@ -178,19 +178,21 @@ header .fixed {
 .container {
     display: flex;
     flex-direction: row;
-    margin-right: 0%;
+    margin: 0 1% 0 1%;
+    gap: 10vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .containerOptions {
     display: flex;
     flex-direction: column;
-    margin-right: 5%;
 }
 
 .containerOptions > * {
     justify-content: space-between;
     align-items: baseline;
-    gap: 4em;
+    gap: 7%;
 }
 .containerOptions * {
     display: flex;
@@ -235,12 +237,8 @@ header .fixed {
     font-weight: bold;
 }
 
-#containerTable {
-    display: grid;
-    width: 100%;
-    justify-content: stretch;
-    align-items: center;
-    column-gap: 5em;
+#tableContainer {
+    flex-basis: 40%;
 }
 
 #technologieslogos {

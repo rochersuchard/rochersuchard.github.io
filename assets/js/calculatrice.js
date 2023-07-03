@@ -284,6 +284,11 @@ class Table
         return this.elementsMap.get(search).children[column].innerText;
     }
 
+    getCell(search, column)
+    {
+        return this.elementsMap.get(search).children[column];
+    }
+
     setCellText(search, column, text)
     {
         this.elementsMap.get(search).children[column].innerText = text;
@@ -307,3 +312,4 @@ class Table
 
 let tab = new Table(document.querySelector("#tableContainer"), content);
 tab.build();
+tab.getCell("title", 0).style.width="50%";
