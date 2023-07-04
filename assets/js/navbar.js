@@ -5,6 +5,13 @@ const navbarContent = [
 ];
 
 const divElement = document.querySelector(".navbar");
+
+const logoElement = document.createElement("a");
+divElement.appendChild(logoElement);
+logoElement.setAttribute("href", "/index");
+logoElement.setAttribute("class", "logo");
+logoElement.innerText = "Centrale Médecine";
+
 const ULElement = document.createElement("ul");
 divElement.appendChild(ULElement);
 

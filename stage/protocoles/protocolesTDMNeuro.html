@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>Centrale Médecine</title>
+        <title>Protocoles TDM Neuro - Centrale Médecine</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="assets/css/styling.css" rel="stylesheet">
+        <link href="/assets/css/styling.css" rel="stylesheet">
+        <script type="module" src="/assets/js/navbar.js"></script>
+        <script type="module" src="/assets/js/path.js"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9035976329747107" crossorigin="anonymous"></script>
 
     </head>
     <body>
         <header>
-            <div class="navbar">
-                <ul>
-                    <li><a class="active "href="index.html">Accueil</a></li>
-                    <li><a href="cours.html">Cours</a></li>
-                    <li><a href="mnemo.html">Moyens mnémotechniques</a></li>
-                    <li><a href="organisation.html">Organisation du travail</a></li>
-                    <li><a href="internat.html">Internat</a></li>
-                    <li><a href="aide.html">Aide psychologique</a></li>
-                    <li><a href="apropos.html">A propos</a></li>
-                </ul>
-                <div class="logo">Centrale Médecine</div>
-            </div>
-            <script>
-                document.addEventListener("scroll", function() {
-                    const header = document.querySelector("navbar");
-                    header.classList.toggle("sticky", document);
-                })
-            </script>
+            <div class="navbar"></div>
         </header>
         <main>
+            <div id="path"></div>
             <h1>Protocoles TDM Neurologique</h1>
             <p>Les informations sur cette page sont principalement destinées aux internes débutant
                 en radiologie, afin de les familiariser aux protocoles basiques, mais également

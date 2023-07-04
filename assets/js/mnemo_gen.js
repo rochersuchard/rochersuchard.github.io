@@ -1,4 +1,4 @@
-let response = await fetch("assets/js/mnemos.json",{
+let response = await fetch("/assets/js/mnemos.json",{
     headers: {
         Accept: 'application/json'
     }

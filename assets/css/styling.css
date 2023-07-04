@@ -303,6 +303,7 @@ th {
     column-gap: 2em;
     font-size: large;
     cursor: pointer;
+    transition: 300ms;
 }
 
 .mail:hover {
@@ -315,13 +316,13 @@ th {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 8%;
-    margin: 2%;
+    margin: 3%;
 }
 
 .tile {
     display: block;
     align-items: center;
-    width: 10%;
+    width: 8%;
     min-width: 100px;
 }
 
@@ -336,11 +337,37 @@ th {
     align-items: center;
 }
 
-.centeredContainer {
+.centeredContainerFinance {
     width: 95%;
     transition: 300ms;
     position: relative;
-    opacity: 70%;
+    opacity: 90%;
+}
+
+.centeredContainerFinance:hover {
+    width: 100%;
+    opacity: 100;
+}
+
+.centeredContainerProtocole {
+    transition: 700ms;
+    position: relative;
+    opacity: 90%;
+}
+
+.centeredContainerProtocole:hover {
+    transform: rotate(360deg);
+    opacity: 100%;
+}
+
+
+.centeredContainerMnemo {
+    transition: 1s;
+    position: relative;
+}
+
+.centeredContainerMnemo:hover {
+    filter: hue-rotate(300deg);
 }
 
 .centerer {
@@ -361,11 +388,6 @@ th {
 
 .purple:hover {
     opacity: 100%;
-}
-
-.centeredContainer:hover {
-    width: 100%;
-    opacity: 100;
 }
 
 .tileText {
