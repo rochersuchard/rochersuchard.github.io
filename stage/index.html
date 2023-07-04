@@ -3,6 +3,7 @@
     <head>
         <title>Stage - Centrale Médecine</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/assets/css/styling.css" rel="stylesheet">
         <script type="module" src="/assets/js/navbar.js"></script>
         <script type="module" src="/assets/js/path.js"></script>
@@ -21,22 +22,37 @@
                 <h2>Finance</h2>
                 <div class="financeGrid">
                     <a href="loi" class="tile">
-                        <img src="/img/judge_orange.svg" id="imgFinance1Orange"></img>
-                        <img src="/img/judge_purple.svg" id="imgFinance1Purple"></svg>
-                        <div>LOI</div>
-                        
+                        <div class="hoverTile">
+                            <div class="tileImage">
+                                <div class="centeredContainer">
+                                    <img src="/img/judge_orange.svg" class="centerer">
+                                    <img src="/img/judge_orange.svg" class="real">
+                                    <img src="/img/judge_purple.svg" class="real purple">
+                                </div>
+                            </div>
+                            <div class="tileText">LOI</div>
+                        </div>
                     </a>
                     <a href="calculatrice" class="tile">
-                        <img src="/img/calculator_orange.svg" id="imgFinance2Orange"></img>
-                        <img src="/img/calculator_purple.svg" id="imgFinance2Purple"></svg>
-                        <div>CALCULATRICE SALAIRE</div>
+                        <div class="tileImage">
+                            <div class="centeredContainer">
+                                <img src="/img/calculator_orange.svg" class="centerer">
+                                <img src="/img/calculator_orange.svg" class="real">
+                                <img src="/img/calculator_purple.svg" class="real purple">
+                            </div>
+                        </div>
+                        <div class="tileText">CALCULATRICE SALAIRE</div>
                     </a>
                     <a href="fiche-paie" class="tile">
-                        <img src="/img/receipt_orange.svg" id="imgFinance3Orange"></img>
-                        <img src="/img/receipt_purple.svg" id="imgFinance3Purple"></svg>
-                        <div>DECHIFFRER SA FICHE DE PAIE</div>
-
-                    </div>
+                        <div class="tileImage">
+                            <div class="centeredContainer">
+                                <img src="/img/receipt_orange.svg" class="centerer">
+                                <img src="/img/receipt_orange.svg" class="real">
+                                <img src="/img/receipt_purple.svg" class="real purple">
+                            </div>
+                        </div>
+                        <div class="tileText">DECHIFFRER SA FICHE DE PAIE</div>
+                    </a>
                 </div>
             </main>
     </body>

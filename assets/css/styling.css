@@ -311,66 +311,65 @@ th {
 
 .financeGrid {
     display: flex;
-    justify-content:center;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8%;
+    margin: 2%;
 }
 
 .tile {
-    display: flex;
-    color: black;
-    flex-direction: column;
-    justify-content: end;
+    display: block;
     align-items: center;
-    width: 26%;
-    transition: 700ms;
-    aspect-ratio: 1 / 1;
-    border-radius: 1em;
-    position: relative;
-    margin: 7%;
+    width: 10%;
+    min-width: 100px;
 }
 
 .tile:hover {
-    width: 28%;
-    margin: 6.25%;
     color: black;
 }
 
-.tile div {
-    font-weight: bolder;
-    font-size: 1.4vw;
+.tileImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tile img {
+.centeredContainer {
+    width: 95%;
+    transition: 300ms;
+    position: relative;
+    opacity: 70%;
+}
+
+.centerer {
+    width: 100%;
+}
+
+.real {
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
 }
 
-#imgFinance1Purple {
-    opacity: 0;
-    transition: 700ms;
+.purple {
+    opacity: 0%;
+    transition: 300ms;
 }
 
-#imgFinance1Purple:hover {
+.purple:hover {
     opacity: 100%;
 }
 
-#imgFinance2Purple {
-    opacity: 0;
-    transition: 700ms;
+.centeredContainer:hover {
+    width: 100%;
+    opacity: 100;
 }
 
-#imgFinance2Purple:hover {
-    opacity: 100%;
-}
-
-#imgFinance3Purple {
-    opacity: 0;
-    transition: 700ms;
-}
-
-#imgFinance3Purple:hover {
-    opacity: 100%;
+.tileText {
+    font-weight: bold;
+    text-align: center;
+    justify-self: end;
 }
