@@ -3,10 +3,13 @@
     <head>
         <title>Déchiffrer sa fichier de paie - Centrale Médecine</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/assets/css/styling.css" rel="stylesheet">
+        <script type="module" src="/assets/js/fiche-paie.js"></script>
         <script type="module" src="/assets/js/navbar.js"></script>
         <script type="module" src="/assets/js/path.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9035976329747107" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -16,6 +19,48 @@
         <main>
             <div id="path"></div>
             <h1>Déchiffrer sa fiche de paie</h1>
+            <div class="rappel">
+                <img src="/img/information.svg" alt="Erreur" width="50" height="50">
+                <p>
+                <u>Rappel :</u>
+                
+                <br><br><b>salaire net</b>  =  salaire brut - cotisations sociales
+                
+                <br><b>salaire perçu</b>  =  salaire net - impôts sur le revenu
+                                            = salaire brut - cotisations sociales - impôts sur le revenu
+                </p>
+            </div>
+            <h2>Salaire brut</h2>
+            <p>Mis à jour selon l'arrêté du <span style="font-weight: bold;" id="date"></span></p>
+            <p>Source : <a id="source"></a></p>
+            <div class="rappel">
+                <img src="/img/information.svg" alt="Erreur" width="50" height="50">
+                <p>
+                <u>Rappel :</u>
+                <br><br><b>salaire brut</b>  =  
+                <br>traitement de base médical
+                <br>+ indémnité de sujétion particulière (FFI ou interne de 1ère/2e année)
+                <br>+ indemnité de responsabilité (interne de 4e/5e année)
+                <br>+ majoration non logé/non nourri
+                <br>+ prise en charge des transports
+                </p>
+            </div>
+            <h3>Traitement de base médical</h3>
+            <table id="remunerationBrute">
+                <tr>
+                    <th>Année</th>
+                    <th>Annuel</th>
+                    <th>Mensuel</th>
+                </tr>
+            </table>
+            <h3>Indemnite de sujétion particulière</h3>
+            <p><i>Conditions d'accès : FFI, 1ère ou 2e année d'internat</i></p> 
+            <p><b>Montant</b> : <span id="sujetion"></span>€ par mois</p>
+
+            <h3>Indemnite de responsabilite</h3>
+            <p><i>Conditions d'accès : 4e ou 5e année d'internat</i></p> 
+            <p><b>Montant 4e année</b> : <span id="responsabilite4"></span></p>
+            <p><b>Montant 5e année</b> : <span id="responsabilite5"></span></p>
 
             </main>
     </body>

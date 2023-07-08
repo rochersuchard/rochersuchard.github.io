@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    margin : 1em;
+    margin : 2vw;
 }
 
 p {
@@ -111,7 +111,6 @@ header .fixed {
 }
 .navbar {
     background-color: #ff8f53;
-    margin: 0;
     border-top: solid rgb(188, 188, 188) 1px;
     border-bottom: solid rgb(118, 141, 165) 1px;
     padding: 0;
@@ -179,7 +178,7 @@ header .fixed {
     display: flex;
     flex-direction: row;
     margin: 0 1% 0 1%;
-    gap: 10vh;
+    gap: 7vh;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -187,19 +186,22 @@ header .fixed {
 .containerOptions {
     display: flex;
     flex-direction: column;
-}
-
-.containerOptions > * {
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 7%;
+    max-width: 95vw;
+    align-items: stretch;
+    min-width: 30vw;
 }
 .containerOptions * {
     display: flex;
     flex-direction: row;
+    gap: 0.2em;
+    flex-wrap: wrap;
 }
 
 .containerOptions > *{
+    margin: auto;
+    
+    align-items: baseline;
+    gap: 7%;
     margin: 0.2em;
     padding: 0.5em 2em;
     border-style: solid;
@@ -237,6 +239,13 @@ header .fixed {
     font-weight: bold;
 }
 
+.erreur {
+    color: rgb(228, 83, 83);
+    font-weight: lighter;
+    
+    font-size: small;
+}
+
 #tableContainer {
     flex-basis: 40%;
 }
@@ -266,19 +275,43 @@ th {
     font-weight: bold;
 }
 
+.ligneProtocoles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    align-items: center;
+}
+
 .vignetteProtocole a {
     border:#e8e8e8 solid 0.5px;
     cursor: pointer;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 1em;
     background-color: rgb(255, 251, 247);
+    width: 300px;
+    margin: 5vh;
+}
+
+.vignetteProtocole a h3{
+    text-align: center;
 }
 
 .vignetteProtocole img {
-    max-width : 70%;
-    border-radius: 2em;
+    width: 90%;
+}
+
+.rappel {
+    background-color: rgb(224, 241, 255);
+    color: rgb(0, 0, 0);
+    padding: 1em 2em 1em 2em;
+    margin: 2em 1em 2em 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 2em;
 }
 
 .attention {
@@ -286,7 +319,7 @@ th {
     color: white;
     padding: 0 1em 0 1em;
     margin: 2em 10% 2em 1em;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
     column-gap: 1em;
