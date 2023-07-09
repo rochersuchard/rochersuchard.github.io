@@ -24,10 +24,10 @@
                 <p>
                 <u>Rappel :</u>
                 
-                <br><br><b>salaire net</b>  =  salaire brut - cotisations sociales
+                <br><br><b>salaire net</b>  =  salaire brut - cotisations
                 
                 <br><b>salaire perçu</b>  =  salaire net - impôts sur le revenu
-                                            = salaire brut - cotisations sociales - impôts sur le revenu
+                                            = salaire brut - cotisations - impôts sur le revenu
                 </p>
             </div>
             <h2>Salaire brut</h2>
@@ -55,12 +55,48 @@
             </table>
             <h3>Indemnite de sujétion particulière</h3>
             <p><i>Conditions d'accès : FFI, 1ère ou 2e année d'internat</i></p> 
-            <p><b>Montant</b> : <span id="sujetion"></span>€ par mois</p>
+            <p><span class="elementImportant">Montant</span> : <span id="sujetion"></span>€ par mois</p>
 
             <h3>Indemnite de responsabilite</h3>
             <p><i>Conditions d'accès : 4e ou 5e année d'internat</i></p> 
-            <p><b>Montant 4e année</b> : <span id="responsabilite4"></span></p>
-            <p><b>Montant 5e année</b> : <span id="responsabilite5"></span></p>
+            <p><span class="elementImportant">Montant 4e année</span> : <span id="responsabilite4"></span></p>
+            <p><span class="elementImportant">Montant 5e année</span> : <span id="responsabilite5"></span></p>
+
+            <h3>Majoration pour les internes non logés/non nourris</h3>
+            <p><span class="elementImportant">Nourri(e) mais non logé(e)</span> : <span id="loge"></span></p>
+            <p><span class="elementImportant">Logé(e) mais non nourri(e)</span> : <span id="nourri"></span></p>
+            <p><span class="elementImportant">Non logé(e) et non nourri(e)</span> : <span id="logenourri"></span></p>
+
+            <h2>Cotisations</h2>
+            <h3>Sécurité sociale</h3>
+            <h4>Assurance vieillesse</h4>
+            <p>L'assurance vieillesse constitue le régime de retraite de base des salariés. Sa base de calcul se fait sur 100% du salaire brut.</p>
+            <p>Les cotisations sur ce régime sont décomposées en deux parties :
+                <ul>
+                    <li>L'assurance vieillesse sur rémunération totale (S. S. Totale) : son taux est de <span id="SSTotTauxFrance"></span> dans toute la France, sauf les départements du Bas-Rhin, Haut-Rhin et Moselle où le taux est de <span id="SSTotTauxAlsace"></span>. Il est calculé sur la totalité de la base de calcul, sans plafond.</li>
+                    <li>L'assurance vieillesse plafonnée (S. S. Plafonnée) : son taux est supérieur, égal à <span id="SSPlafTaux"></span> de la base de calcul, mais cette base de calcul est plafonnée à <span class="plafondSS"></span>.</li>
+                </ul>
+            </p>
+            <div class="rappel">
+                <img src="/img/information.svg" alt="Erreur" width="50" height="50">
+                <p><u>Exemples :</u>
+                <br><br><i>Pour un revenu mensuel brut de 2500 euros en Ile de France : notre base de calcul est 100% de 2500, c'est à dire 2500 euros</i>
+                <br>\(SSTot = 2500*0.4\%=10\)
+                <br>\(SSPlaf=2500*6.9\%=172.5\)
+                <br>Au total cela fait une cotisation assurance vieillesse de 10 + 172.5 = 182.5€
+                <br><br><i>Pour un revenu mensuel brut de 3800 euros dans le Bas-Rhin : notre base de calcul est 100% de 3800, c'est à dire 3800 euros</i>
+                <br>\(SSTot = 3800*1.7\%=64.6\)
+                <br>\(SSPlaf=3666*6.9\%=252.95\) <i>(la base de calcul dépasse le plafond donc on utilise le plafond de <span class="plafondSS"></span> comme base pour la composante plafonnée)</i>
+                <br>Au total cela fait une cotisation assurance vieillesse de 64.6 + 252.95 = 317.55€
+                </p>
+            </div>
+            <h4></h4>
+
+            <h4>Contributions</h4>
+            <h5>CSG</h5>
+            <p>C'est une contribution générale visant à financer la protection sociale.</p>
+            <p>Elle est appliquée à un taux de</p>
+            <h3>Chômage</h3>
 
             </main>
     </body>

@@ -14,7 +14,8 @@ import {
     logeTaux,
     nourriBase,
     nourriTaux,
-    SSTotTaux,
+    SSTotTauxFrance,
+    SSTotTauxAlsace,
     SSTotBase,
     SSPlafTaux,
     SSPlafBase,
@@ -38,7 +39,7 @@ const content = [
     {key: "loge", type: "td", cells : ["Majoration Logement", "", (logeBase/12).toFixed(2), ""]},
     {key: "nourri", type: "td", cells : ["Majoration Nourriture", "", (nourriBase/12).toFixed(2), ""]},
     {key: "brut", type: "th", cells: ["Brut Imposable", "", "", ""]},
-    {key: "SSTot", type: "td", cells: ["S.S Totalité", (SSTotTaux*100).toFixed(2) + "%", "", ""]},
+    {key: "SSTot", type: "td", cells: ["S.S Totalité", "", "", ""]},
     {key: "SSPlaf", type: "td", cells: ["S.S Plafonnée", (SSPlafTaux*100).toFixed(2) + "%", "", ""]},
     {key: "CRDS", type: "td", cells: ["C.R.D.S", (CRDSTaux*100).toFixed(2) + "%", "", ""]},
     {key: "CSGDed", type: "td", cells: ["C.S.G Déductible", (CSGDedTaux*100).toFixed(2) + "%", "", ""]},
@@ -191,6 +192,13 @@ nonNourriElement.addEventListener("click", function (){
     }
     tab.refreshNourri();
 });
+
+let SSTotTaux = SSTotTauxFrance;
+const alsaceElement = document.querySelector("#alsace");
+alsaceElement.addEventListener("change", function() {
+    SSTotTaux = (this.checked) ? SSTotTauxAlsace : SSTotTauxFrance;
+    tab.refreshTaxes();
+})
 
 const sourceElement = document.querySelector("#source");
 sourceElement.addEventListener("focus", function () {
@@ -359,6 +367,7 @@ class Table
     refreshTaxes()
     {
         const brut = this.getCellText("brut", 3);
+        this.setCellText("SSTot", 1, (SSTotTaux*100).toFixed(2) + "%");
         this.setCellText("SSTot", 2, (SSTotBase*brut).toFixed(2));
         this.setCellText("SSTot", 3, "-" + (SSTotTaux*this.getCellText("SSTot",2)).toFixed(2));
 

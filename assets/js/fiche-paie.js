@@ -12,10 +12,15 @@ import {
     responsabiliteTaux,
     montantGardeSemaine,
     montantGardeWE,
-    SSTotTaux,
+    logeBase,
+    nourriBase,
+    logenourriBase,
+    SSTotTauxFrance,
+    SSTotTauxAlsace,
     SSTotBase,
     SSPlafTaux,
     SSPlafBase,
+    plafondSS,
     CRDSTaux,
     CRDSBase,
     CSGDedTaux,
@@ -53,3 +58,14 @@ document.querySelector("#sujetion").innerText = sujetionBase;
 
 document.querySelector("#responsabilite4").innerText = responsabilite4Base + "€ par an (soit " + (responsabilite4Base/12).toFixed(2) + "€ par mois)";
 document.querySelector("#responsabilite5").innerText = responsabilite5Base + "€ par an (soit " + (responsabilite5Base/12).toFixed(2) + "€ par mois)";
+
+document.querySelector("#loge").innerText = logeBase + "€ par an (soit " + (logeBase/12).toFixed(2) + "€ par mois)";
+document.querySelector("#nourri").innerText = nourriBase + "€ par an (soit " + (nourriBase/12).toFixed(2) + "€ par mois)";
+document.querySelector("#logenourri").innerText = logenourriBase + "€ par an (soit " + (logenourriBase/12).toFixed(2) + "€ par mois)";
+
+document.querySelector("#SSTotTauxFrance").innerText = SSTotTauxFrance*100 + "%";
+document.querySelector("#SSTotTauxAlsace").innerText = (SSTotTauxAlsace*100).toFixed(1) + "%";
+
+document.querySelector("#SSPlafTaux").innerText = (SSPlafTaux*100).toFixed(1) + "%";
+
+for(let element of document.querySelectorAll(".plafondSS")){element.innerText = plafondSS + "€";}

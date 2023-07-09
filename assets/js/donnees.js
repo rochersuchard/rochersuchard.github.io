@@ -21,11 +21,17 @@ const logeTaux = 1.0;
 const nourriBase = 674.31;
 const nourriTaux = 1.0;
 
-const SSTotTaux = 0.0170;
+const logenourriBase = 1010.64;
+const logenourriTaux = 1.0;
+
+const SSTotTauxFrance = 0.0040;
+const SSTotTauxAlsace = 0.0170;
 const SSTotBase = 1;
 
 const SSPlafTaux = 0.0690;
 const SSPlafBase = 1;
+
+const plafondSS = 3666;
 
 const CRDSTaux = 0.005;
 const CRDSBase = 0.9825;
@@ -55,10 +61,14 @@ export {
     logeTaux,
     nourriBase,
     nourriTaux,
-    SSTotTaux,
+    logenourriBase,
+    logenourriTaux,
+    SSTotTauxFrance,
+    SSTotTauxAlsace,
     SSTotBase,
     SSPlafTaux,
     SSPlafBase,
+    plafondSS,
     CRDSTaux,
     CRDSBase,
     CSGDedTaux,
