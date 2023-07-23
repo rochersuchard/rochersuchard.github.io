@@ -21,7 +21,6 @@ for(let i in pathArray)
     currentPath += "/";
     currentPath += pathArray[i];
 
-    console.log(i + pathArray[i]);
 
     let linkElement = null;
     if(i < pathArray.length - 1)

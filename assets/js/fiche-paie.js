@@ -27,7 +27,8 @@ import {
     CSGDedBase,
     CSGNonDedTaux,
     CSGDNonDedBase,
-    IRCANTECTaux,
+    IRCANTECTauxInf,
+    IRCANTECTauxSup,
     IRCANTECBase   
 } from "/assets/js/donnees.js";
 
@@ -54,7 +55,7 @@ for(let i in traitementsBase)
     ligneElement.appendChild(mensuelElement);
 }
 
-document.querySelector("#sujetion").innerText = sujetionBase;
+document.querySelector("#sujetion").innerText = sujetionBase + "€";
 
 document.querySelector("#responsabilite4").innerText = responsabilite4Base + "€ par an (soit " + (responsabilite4Base/12).toFixed(2) + "€ par mois)";
 document.querySelector("#responsabilite5").innerText = responsabilite5Base + "€ par an (soit " + (responsabilite5Base/12).toFixed(2) + "€ par mois)";
@@ -69,3 +70,16 @@ document.querySelector("#SSTotTauxAlsace").innerText = (SSTotTauxAlsace*100).toF
 document.querySelector("#SSPlafTaux").innerText = (SSPlafTaux*100).toFixed(1) + "%";
 
 for(let element of document.querySelectorAll(".plafondSS")){element.innerText = plafondSS + "€";}
+
+document.querySelector("#CSGDedTaux").innerText = ((CSGDedTaux*100).toFixed(1) + "%");
+document.querySelector("#CSGNonDedTaux").innerText = ((CSGNonDedTaux*100).toFixed(1) + "%");
+
+document.querySelector("#CSGDedBase").innerText = ((CSGDedBase*100).toFixed(2) + "%");
+document.querySelector("#CSGNonDedBase").innerText = ((CSGDedBase*100).toFixed(2) + "%");
+
+document.querySelector("#CRDSTaux").innerText = ((CRDSTaux*100).toFixed(1) + "%");
+document.querySelector("#CRDSBase").innerText = ((CRDSBase*100).toFixed(2) + "%");
+
+document.querySelector("#IRCANTECBase").innerText = (IRCANTECBase*100).toFixed(2) + "%";
+document.querySelector("#IRCANTECTauxInf").innerText = (IRCANTECTauxInf*100).toFixed(1) + "%";
+document.querySelector("#IRCANTECTauxSup").innerText = (IRCANTECTauxSup*100).toFixed(2) + "%";

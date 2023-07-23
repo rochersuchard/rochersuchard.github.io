@@ -42,7 +42,8 @@ const CSGDedBase = 0.9825;
 const CSGNonDedTaux = 0.024;
 const CSGDNonDedBase = 0.9825;
 
-const IRCANTECTaux = 0.028;
+const IRCANTECTauxInf = 0.028;
+const IRCANTECTauxSup = 0.0695;
 const IRCANTECBase = 2/3;
 
 export {
@@ -75,6 +76,7 @@ export {
     CSGDedBase,
     CSGNonDedTaux,
     CSGDNonDedBase,
-    IRCANTECTaux,
+    IRCANTECTauxInf,
+    IRCANTECTauxSup,
     IRCANTECBase    
 }

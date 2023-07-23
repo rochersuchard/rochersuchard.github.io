@@ -25,7 +25,8 @@ import {
     CSGDedBase,
     CSGNonDedTaux,
     CSGDNonDedBase,
-    IRCANTECTaux,
+    IRCANTECTauxInf,
+    IRCANTECTauxSup,
     IRCANTECBase    
 } from "/assets/js/donnees.js";
 
@@ -44,7 +45,7 @@ const content = [
     {key: "CRDS", type: "td", cells: ["C.R.D.S", (CRDSTaux*100).toFixed(2) + "%", "", ""]},
     {key: "CSGDed", type: "td", cells: ["C.S.G Déductible", (CSGDedTaux*100).toFixed(2) + "%", "", ""]},
     {key: "CSGNonDed", type: "td", cells: ["C.S.G Non Déductible", (CSGNonDedTaux*100).toFixed(2) + "%", "", ""]},
-    {key: "IRCANTEC", type: "td", cells: ["IRCANTEC Tranche A", (IRCANTECTaux*100).toFixed(2) + "%", "", ""]},
+    {key: "IRCANTECA", type: "td", cells: ["IRCANTEC Tranche A", (IRCANTECTauxInf*100).toFixed(2) + "%", "", ""]},
     {key: "cotisations", type: "th", cells: ["Total cotisations", "", "", ""]},
     {key: "net", type: "th", cells: ["Net à payer avant impôt", "", "", ""]},
     {key: "source", type: "td", cells: ["Prélèvement à la source", "", "", ""]},
@@ -209,7 +210,6 @@ sourceElement.addEventListener("focus", function () {
             if(document.activeElement == sourceElement)
             {
                 tab.refreshSource();
-                console.log("waiting");
                 waitFocus();
             }
         }, 500);
@@ -383,10 +383,10 @@ class Table
         this.setCellText("CSGNonDed", 2, (CSGDNonDedBase*brut).toFixed(2));
         this.setCellText("CSGNonDed", 3, "-" + (CSGNonDedTaux*this.getCellText("CSGNonDed",2)).toFixed(2));
 
-        this.setCellText("IRCANTEC", 2, (IRCANTECBase*brut).toFixed(2));
-        this.setCellText("IRCANTEC", 3, "-" + (IRCANTECTaux*this.getCellText("IRCANTEC",2)).toFixed(2));
+        this.setCellText("IRCANTECA", 2, (IRCANTECBase*(+this.getCellText("traitement", 3) + +this.getCellText("responsabilite",3))).toFixed(2));
+        this.setCellText("IRCANTECA", 3, "-" + (IRCANTECTauxInf*this.getCellText("IRCANTECA",2)).toFixed(2));
 
-        this.setCellText("cotisations", 3, (+this.getCellText("SSTot", 3) + +this.getCellText("SSPlaf", 3) + +this.getCellText("CRDS", 3) + +this.getCellText("CSGDed", 3) + +this.getCellText("CSGNonDed", 3) + +this.getCellText("IRCANTEC", 3)).toFixed(2));
+        this.setCellText("cotisations", 3, (+this.getCellText("SSTot", 3) + +this.getCellText("SSPlaf", 3) + +this.getCellText("CRDS", 3) + +this.getCellText("CSGDed", 3) + +this.getCellText("CSGNonDed", 3) + +this.getCellText("IRCANTECA", 3)).toFixed(2));
 
         this.refreshNet();
     }
@@ -395,7 +395,7 @@ class Table
     {
         let somme = this.getCellText("brut", 3);
 
-        for(let key of ["SSTot", "SSPlaf", "CRDS", "CSGDed", "CSGNonDed", "IRCANTEC"])
+        for(let key of ["SSTot", "SSPlaf", "CRDS", "CSGDed", "CSGNonDed", "IRCANTECA"])
         {
             somme -= this.getCellText(key, 3).substring(1);
         }
@@ -422,7 +422,7 @@ class Table
         }
 
         this.setCellText("source", 1, (sourceElement.value == "") ? "0%" : (sourceElement.value + "%"));
-        this.setCellText("source", 2, this.getCellText("net", 3));
+        this.setCellText("source", 2, this.getCellText("net", 3) );
         this.refreshTotal("source");
         this.refreshPercu();
 

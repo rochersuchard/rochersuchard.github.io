@@ -8,9 +8,7 @@
         <script type="module" src="/assets/js/fiche-paie.js"></script>
         <script type="module" src="/assets/js/navbar.js"></script>
         <script type="module" src="/assets/js/path.js"></script>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9035976329747107" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
@@ -55,17 +53,17 @@
             </table>
             <h3>Indemnite de sujétion particulière</h3>
             <p><i>Conditions d'accès : FFI, 1ère ou 2e année d'internat</i></p> 
-            <p><span class="elementImportant">Montant</span> : <span id="sujetion"></span>€ par mois</p>
+            <p>Montant : <span id="sujetion"></span> par mois</p>
 
             <h3>Indemnite de responsabilite</h3>
             <p><i>Conditions d'accès : 4e ou 5e année d'internat</i></p> 
-            <p><span class="elementImportant">Montant 4e année</span> : <span id="responsabilite4"></span></p>
-            <p><span class="elementImportant">Montant 5e année</span> : <span id="responsabilite5"></span></p>
+            <p>Montant 4e année: <span id="responsabilite4"></span></p>
+            <p>Montant 5e année : <span id="responsabilite5"></span></p>
 
             <h3>Majoration pour les internes non logés/non nourris</h3>
-            <p><span class="elementImportant">Nourri(e) mais non logé(e)</span> : <span id="loge"></span></p>
-            <p><span class="elementImportant">Logé(e) mais non nourri(e)</span> : <span id="nourri"></span></p>
-            <p><span class="elementImportant">Non logé(e) et non nourri(e)</span> : <span id="logenourri"></span></p>
+            <p>Nourri(e) mais non logé(e) : <span id="loge"></span></p>
+            <p>Logé(e) mais non nourri(e) : <span id="nourri"></span></p>
+            <p>Non logé(e) et non nourri(e) : <span id="logenourri"></span></p>
 
             <h2>Cotisations</h2>
             <h3>Sécurité sociale</h3>
@@ -92,12 +90,39 @@
             </div>
             <h4></h4>
 
-            <h4>Contributions</h4>
+            <h4>Prélèvements sociaux</h4>
+            <p>Les prélèvements sociaux comprennent la CSG, la CRDS et le prélèvement de solidarité (ici nous ne somme pas concernés par le prélèvement de solidarité car il ne s'applique que
+                sur les revenus du patrimoine et sur les produits de placement).
+            </p>
             <h5>CSG</h5>
-            <p>C'est une contribution générale visant à financer la protection sociale.</p>
-            <p>Elle est appliquée à un taux de</p>
+            <p>La contribution sociale généralisée est un prélèvement social visant à financer la protection sociale.</p>
+            <p>Elle est décomposée en deux parties :
+                <ul>
+                    <li>CSG déductible : cette part est appliquée à un taux de <span id="CSGDedTaux"></span> sur une base de <span id="CSGDedBase"></span> du montant brut imposable.
+                        Son montant est déduit de la base d'imposition.</li>
+                    <li>CSG non déductible : cette part est appliquée à un taux de <span id="CSGNonDedTaux"></span> sur une base de <span id="CSGNonDedBase"></span> du montant brut imposable.
+                        Son montant est inclus dans la base d'imposition.</li>
+                </ul>
+            </p>
+            <h5>CRDS</h5>
+            <p>La contribution au remboursement de la dette sociale est un prélèvement social visant à amortir la dette sociale.
+                <br>Lors de sa création, la CRDS devait disparaître en 2009, mais son existence à été prolongée jusqu'à extinction de la dette.
+                <br>Elle est appliquée à un taux de <span id="CRDSTaux"></span> sur une base de <span id="CRDSBase"></span> du montant brut imposable.
+            </p>
             <h3>Chômage</h3>
+            <p>Notre caisse de retrait complémentaire est l'IRCANTEC.</p>
+            <p>On cotise sur une base de <span id="IRCANTECBase"></span> de notre traitement de base médical. Les gardes, astreintes, avantages en nature et indemnité de sujétion
+            sont exclus de la base de cotisation. Cependant, la prime de responsabilité (4e et 5e année d'internat) est bien soumise à cotisation IRCANTEC.
+            <br>Le taux de cotisation dépend de la tranche de salaire (selon si l'on se trouve en dessous du plafond annuel de la Sécurité Sociale de <span class="plafondSS"></span>) :
+            <ul>
+                <li>Tranche A (&lt; <span class="plafondSS"></span>) : taux de <span id="IRCANTECTauxInf"></span></li>
+                <li>Tranche B (> <span class="plafondSS"></span>) : taux de <span id="IRCANTECTauxSup"></span></li>
+            </ul> </p>
 
             </main>
     </body>
 </html>
+
+<style>
+    span {font-weight: bold;}
+</style>
