@@ -16,11 +16,6 @@
 		<lastmod>2023-07-29</lastmod>
 	</url>
 	<url>
-		<loc>https://www.centralemedecine.fr/outils.html</loc>
-		<priority>0.75</priority>
-		<lastmod>2023-07-02</lastmod>
-	</url>
-	<url>
 		<loc>https://www.centralemedecine.fr/organisation.html</loc>
 		<priority>0.75</priority>
 		<lastmod>2023-07-01</lastmod>
@@ -74,11 +69,6 @@
 		<loc>https://www.centralemedecine.fr/revisions/mnemos.html</loc>
 		<priority>0.50</priority>
 		<lastmod>2023-07-29</lastmod>
-	</url>
-	<url>
-		<loc>https://www.centralemedecine.fr/assets/add_nmemo.html</loc>
-		<priority>0.50</priority>
-		<lastmod>2023-07-01</lastmod>
 	</url>
 	<url>
 		<loc>https://www.centralemedecine.fr/stage/protocoles/protocoles-tdm-visceral.html</loc>

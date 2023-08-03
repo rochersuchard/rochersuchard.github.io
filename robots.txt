@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /modele.html
+Disallow: /assets
+Disallow: /img
+Disallow: /.vscode
+Disallow: /CNAME
+
+Sitemap: https://centralemedecine.fr/sitemap.xml
